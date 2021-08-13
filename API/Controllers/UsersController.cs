@@ -23,7 +23,7 @@ namespace API.Controllers
         }
 
         // api/users/3
-        [HttpGet("{id}")]
+        [HttpGet("/{id}")]
         public ActionResult<AppUser> GetUser(int id){
             return _context.Users.Find(id);
         }
