@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 })
 
 
-export class AppComponent implements OnInit{
+export class AppComponent  implements OnInit{
   title = 'client';
   name = 'Noe Gallardo';
   users: any;
@@ -17,7 +17,9 @@ export class AppComponent implements OnInit{
   
   constructor(private http: HttpClient) {}
 
-  ngOnInit() {this.getUsers()}
+  ngOnInit() {
+    console.log("Hello this is the OnInit");
+    this.getUsers()}
 
   getUsers(){
     this.http.get('https://localhost:5001/api/users').subscribe(response => {
@@ -25,9 +27,8 @@ export class AppComponent implements OnInit{
     }, error => {
       console.log(error);
     })
-
-    console.log(this.users);
   }
+
   getQuestionID() {
     throw new Error('Method not implemented.');
   }
