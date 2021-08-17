@@ -18,7 +18,7 @@ export class AppComponent  implements OnInit{
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    console.log("Hello this is the OnInit");
+    console.log("Metodo OnInit");
     this.getUsers()}
 
   getUsers(){
